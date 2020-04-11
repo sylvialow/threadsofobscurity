@@ -1,3 +1,5 @@
+//This code takes the data from Adafruit IO
+
 
 import java.io.FileWriter;
 import java.io.*;
@@ -18,7 +20,7 @@ int index = 0;
 
 void setup() {
   // Open the text file. RMB CHANGE FILE PATh 
-  reader = createReader("C:/Users/User/Desktop/WriteFinal/database.txt");    
+  reader = createReader("C:/Users/Amanda Lee Ping Ping/Desktop/WriteFinal/database.txt");    
  // size(1000,1000);
  // background(0);
  // textSize(30); 
@@ -43,7 +45,7 @@ void messageReceived(String topic, byte[] payload) {
   
   //testing if file exists, if not, create new text file. RMB CHANGE file path
   try {
-    File file =new File("C:/Users/User/Desktop/WriteFinal/database.txt");
+    File file =new File("C:/Users/Amanda Lee Ping Ping/Desktop/WriteFinal/database.txt");
      
     if (!file.exists()) {
       file.createNewFile();
