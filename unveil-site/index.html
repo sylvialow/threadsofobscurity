@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>(un)veil</title>
+        <link href="animate.css" rel="stylesheet" type="text/css">  
+        <link rel="stylesheet" type="text/css" href="unveil.css">  
+        <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    </head>
+
+    <body>
+            <div id="wrapper">
+                    <h1>
+                        <span id="title">
+                            <span class="title-letter">(</span>
+                            <span class="title-letter">u</span>
+                            <span class="title-letter">n</span>
+                            <span class="title-letter">)</span>
+                            <span class="title-letter">v</span>
+                            <span class="title-letter">e</span>
+                            <span class="title-letter">i</span>
+                            <span class="title-letter">l</span>
+                        </span>
+                        <br/>
+                
+                        <span id="sub-title">an exhibition</span>
+                    </h1>
+                </div>
+<script>
+ let letters = document.getElementsByClassName('title-letter');
+
+setTimeout(() => {
+  for (let i = 0; i < letters.length; i++) {
+    anime({
+      targets: letters[i],
+      easing: 'easeInQuad',
+      translateX: ['5px', '0'],
+      delay: 50 * i
+    });
+
+    anime({
+      targets: letters[i],
+      easing: 'easeInQuad',
+      opacity: 1,
+      delay: 60 * i,
+      complete: function(anim) {
+        if (i === letters.length - 1) {
+          showSubTitle()
+        }
+      }
+    });
+  }
+}, 500);
+
+   
+
+
+function showSubTitle() {
+  anime({
+    targets: '#sub-title',
+    easing: 'easeInQuad',
+    opacity: 1,
+    duration: 300,
+    delay: 1
+  });
+}
+
+setTimeout (function(){
+  window.location="pg2.html"}, 4700);
+</script>
+
+    </body>
+    
+    </html>
